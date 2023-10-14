@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 2,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 3,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 4,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 5,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 6,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 7,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 8,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 9,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    },
+    {
+        "id": 10,
+        "titulo": "Titulo del producto",
+        "marca": "",
+        "precio": 109.95,
+        "descripcion": "descripcion del producto",
+        "categoria": "categoria",
+        "imagen": "./assets/img/vanitory1.jpg",
+        "etiquetas": [""]
+    }
+]
