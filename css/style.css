@@ -21,8 +21,12 @@
     background-color: cyan;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s;
 }
-
+.products:hover{
+    transform: scale(1.02);
+    box-shadow: 5px 5px 5px 0px rgba(200,185,185,0.5);
+}
 .products img {
     padding: 0.25rem;
     width: 100%;
