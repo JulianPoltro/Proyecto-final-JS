@@ -48,8 +48,6 @@ a {
 footer {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    bottom: 0;
     padding: 0.25rem;
-    margin-bottom: 1rem;
+    margin-top:auto;
 }
