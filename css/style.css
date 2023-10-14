@@ -1,12 +1,15 @@
 @import 'base.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
 
 .barra_nav {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .barra_nav a {
     padding: 0.25rem;
+    text-align: center;
 }
 
 .products {
@@ -16,6 +19,8 @@
     margin: 2rem;
     border-radius: 5px;
     background-color: cyan;
+    align-items: center;
+    justify-content: center;
 }
 
 .products img {
@@ -23,10 +28,9 @@
     width: 100%;
 }
 
-.products span, a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.products span, .products a {
+    text-align: center;
+    width: 80%;
 }
 
 .barra_footer {
