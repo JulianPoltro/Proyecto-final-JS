@@ -8,34 +8,36 @@
 }
 
 .barra_nav a {
+    margin: 0.5rem;
     padding: 0.25rem;
     text-align: center;
 }
 
-.products {
+.productCard {
     width: 200px;
+    height: 230px;
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin: 0.25rem 0.5rem ;
     border-radius: 5px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: snow;
     transition: transform 0.2s ease-in-out;
 }
-.products:hover{
+.productCard:hover{
     transform: scale(1.02);
     box-shadow: 5px 5px 5px 0px rgba(200,185,185,0.5);
 }
-.products img {
+.productCard img {
     padding: 0.25rem;
     width: 100%;
 }
-
-.products span, .products a {
+.productCard span, .productCard a {
     text-align: center;
     width: 80%;
 }
+
 
 .barra_footer {
     display: flex;
@@ -43,5 +45,6 @@
 }
 
 .barra_footer a {
+    margin: 0.5rem;
     padding: 0.25rem;
 }
