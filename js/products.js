@@ -5,9 +5,9 @@ const $ = document
 const id = (id) => $.getElementById(id)
 const selectorAll = (selector) => $.querySelectorAll(selector)
 
-const section_products = id('products')
+const section_allProducts = id('allProducts')
 
 
 
 
-obtenerProductos("../data.json",section_products,5);
+obtenerProductos("../data.json",section_allProducts);

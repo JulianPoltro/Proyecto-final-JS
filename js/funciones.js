@@ -1,5 +1,5 @@
-export const crearCards = (array, contenedor) => {
-    array.slice(0,8).map(item => {
+export const crearCards = (array, contenedor,cant=array.length) => {
+    array.slice(0,cant).map(item => {
         contenedor.innerHTML += `
         <article class="productCard">
         <img class="imgCard" src=${item.imagen} alt="${item.etiquetas}">
@@ -9,4 +9,10 @@ export const crearCards = (array, contenedor) => {
         </article>
         `
     })
+}
+
+export const obtenerProductos = async (url,contenedor,cant) => {
+    const response = await fetch(url, { method: 'GET' })
+    const data = await response.json()
+    crearCards(data,contenedor,cant);
 }
