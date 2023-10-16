@@ -49,6 +49,20 @@
     text-align: center;
     width: 80%;
 }
+.cardBtn{
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+    background-color: darkgrey;
+    color: darkslategrey;
+    font-size: 12px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+.cardBtn:hover{
+    transform: scale(1.01);
+    box-shadow: 3px 3px 3px 0px rgba(200, 185, 185, 0.5);
+}
 
 
 .barra_footer {

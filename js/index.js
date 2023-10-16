@@ -13,4 +13,4 @@ const obtenerProductos = async () => {
 }
 
 
-// obtenerProductos();
+obtenerProductos();
