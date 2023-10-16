@@ -1,11 +1,11 @@
 export const crearCards = (array, contenedor) => {
-    array.map(item => {
+    array.slice(0,8).map(item => {
         contenedor.innerHTML += `
         <article class="productCard">
-            <img src=${item.imagen} alt="${item.etiquetas}">
-            <a href="#">${item.titulo}</a>
+        <img class="imgCard" src=${item.imagen} alt="${item.etiquetas}">
+            <span>${item.titulo}</span>
             <span>$${item.precio}</span>
-            <button class="cardBtn" id="btn-${item.id}">Agregar al carrito </button>
+            <a href="#" class="cardBtn" id="btn-${item.id}">Agregar al carrito </a>
         </article>
         `
     })

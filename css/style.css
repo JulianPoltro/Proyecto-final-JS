@@ -37,7 +37,7 @@
     box-shadow: 5px 5px 5px 0px rgba(200, 185, 185, 0.5);
 }
 
-.productCard img {
+.imgCard {
     padding: 0.25rem;
     width: 200px;
     height: 200px;
