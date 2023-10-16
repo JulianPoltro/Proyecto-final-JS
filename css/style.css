@@ -66,6 +66,14 @@
     color: darkgrey;
 }
 
+.selectCantidad{
+    display: flex;
+    justify-content: center;
+}
+.selectCantidad select{
+    font-size: 14px;
+}
+
 .barra_footer {
     display: flex;
     flex-direction: row;
