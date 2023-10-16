@@ -57,13 +57,14 @@
     color: darkslategrey;
     font-size: 12px;
     font-weight: bold;
-    transition: transform 0.2s ease-in-out;
-}
-.cardBtn:hover{
-    transform: scale(1.01);
     box-shadow: 3px 3px 3px 0px rgba(200, 185, 185, 0.5);
+    cursor: pointer;
 }
 
+.cardBtn:hover{
+    background-color: darkslategrey;
+    color: darkgrey;
+}
 
 .barra_footer {
     display: flex;
