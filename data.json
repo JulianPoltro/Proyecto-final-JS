@@ -16,7 +16,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "categoria",
-        "imagen": "./assets/img/vanitory1.jpg",
+        "imagen": "./assets/img/vanitory2.jpg",
         "etiquetas": [""]
     },
     {
@@ -26,7 +26,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "categoria",
-        "imagen": "./assets/img/vanitory1.jpg",
+        "imagen": "./assets/img/vanitory3.jpg",
         "etiquetas": [""]
     },
     {
