@@ -16,4 +16,3 @@ export const obtenerProductos = async (url,contenedor,cant) => {
     const data = await response.json()
     crearCards(data,contenedor,cant);
 }
-
