@@ -22,8 +22,6 @@
 }
 
 .productCard {
-    width: 200px;
-    height: 230px;
     display: flex;
     flex-direction: column;
     margin: 0.25rem 0.5rem;
@@ -41,9 +39,9 @@
 
 .productCard img {
     padding: 0.25rem;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 .productCard span,
