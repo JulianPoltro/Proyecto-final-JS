@@ -1,6 +1,6 @@
-export const crearCards = (array, contenedor,cant=array.length) => {
-    contenedor.innerHTML ="";
-    array.slice(0,cant).map(item => {
+const crearCards = (array, contenedor, cant = array.length) => {
+    contenedor.innerHTML = "";
+    array.slice(0, cant).map(item => {
         contenedor.innerHTML += `
         <article class="productCard">
         <img class="imgCard" src=${item.imagen} alt="${item.etiquetas}">
@@ -11,9 +11,16 @@ export const crearCards = (array, contenedor,cant=array.length) => {
         `
     })
 }
+let btnCarrito = document.querySelectorAll(".cardBtn")
+const actualizarBtnCarrito = () => {
+    btnCarrito = document.querySelectorAll(".cardBtn");
+}
 
-export const obtenerProductos = async (url,contenedor,cant) => {
+export const obtenerProductos = async (url, contenedor, cant) => {
     const response = await fetch(url, { method: 'GET' })
     const data = await response.json()
-    crearCards(data,contenedor,cant);
+    crearCards(data, contenedor, cant);
+    actualizarBtnCarrito();
+    console.log(btnCarrito);
 }
+

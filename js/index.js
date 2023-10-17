@@ -1,4 +1,4 @@
-import { crearCards ,obtenerProductos} from "./funciones.js"
+import {obtenerProductos} from "./funciones.js"
 
 
 const $ = document
@@ -6,18 +6,14 @@ const id = (id) => $.getElementById(id)
 const selector = (selector) => $.querySelector(selector)
 const selectorAll = (selectorAll) => $.querySelectorAll(selectorAll)
 
-const section_productsCat = id('productsCategory')
-let btnCarrito = selectorAll(".cardBtn")
 
+const section_productsCat = id('productsCategory')
 obtenerProductos("../data.json", section_productsCat);
 
 
 
-console.log(btnCarrito)
 
-const actualizarBtnCarrito = () =>{
-    btnCarrito = document.querySelectorAll(".cardBtn");
-}
+
 
 
 

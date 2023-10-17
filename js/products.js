@@ -1,4 +1,3 @@
-import { crearCards } from "./funciones.js"
 import { obtenerProductos } from "./funciones.js"
 
 const $ = document
