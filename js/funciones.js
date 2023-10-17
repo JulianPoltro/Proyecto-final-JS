@@ -1,4 +1,5 @@
 export const crearCards = (array, contenedor,cant=array.length) => {
+    contenedor.innerHTML ="";
     array.slice(0,cant).map(item => {
         contenedor.innerHTML += `
         <article class="productCard">

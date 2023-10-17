@@ -23,6 +23,7 @@
 
 .productCard {
     display: flex;
+    height: 300px;
     flex-direction: column;
     margin: 0.25rem 0.5rem;
     border-radius: 5px;
@@ -65,6 +66,11 @@
     background-color: darkslategrey;
     color: darkgrey;
 }
+
+/* .carritoCompra{
+    height: 50vh;
+    background-color: red;
+} */
 
 .selectCantidad{
     display: flex;
