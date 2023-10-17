@@ -6,7 +6,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "griferia",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/cipres.jpg",
         "etiquetas": [""]
     },
     {
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "titulo": "Griferia Andina",
+        "titulo": "Griferia Epuyen",
         "marca": "FV",
         "precio": 109.95,
         "descripcion": "descripcion del producto",
