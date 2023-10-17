@@ -11,9 +11,18 @@ const crearCards = (array, contenedor, cant = array.length) => {
         `
     })
 }
-let btnCarrito = document.querySelectorAll(".cardBtn")
+
 const actualizarBtnCarrito = () => {
-    btnCarrito = document.querySelectorAll(".cardBtn");
+    const btnCarrito = document.querySelectorAll(".cardBtn");
+    btnCarrito.forEach(boton =>{
+        boton.addEventListener("click", agregarCarrito)
+    })
+}
+
+const productCart = [];
+const agregarCarrito = (e) => {
+    const idProduct = e.target.id;
+    console.log(idProduct)
 }
 
 export const obtenerProductos = async (url, contenedor, cant) => {
@@ -21,6 +30,5 @@ export const obtenerProductos = async (url, contenedor, cant) => {
     const data = await response.json()
     crearCards(data, contenedor, cant);
     actualizarBtnCarrito();
-    console.log(btnCarrito);
 }
 
