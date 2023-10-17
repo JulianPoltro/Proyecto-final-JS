@@ -26,7 +26,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "sanitarios",
-        "imagen": "../assets/img/vbidetbari.jpg",
+        "imagen": "../assets/img/bidetbari.jpg",
         "etiquetas": [""]
     },
     {
