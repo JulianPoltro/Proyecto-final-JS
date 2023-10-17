@@ -16,7 +16,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "sanitarios",
-        "imagen": "../assets/img/vanitory2.jpg",
+        "imagen": "../assets/img/inobari.jpg",
         "etiquetas": [""]
     },
     {
@@ -26,7 +26,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "sanitarios",
-        "imagen": "../assets/img/vanitory3.jpg",
+        "imagen": "../assets/img/vbidetbari.jpg",
         "etiquetas": [""]
     },
     {
@@ -36,7 +36,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "griferia",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/epuyen.jpg",
         "etiquetas": [""]
     },
     {
@@ -46,7 +46,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "griferia",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/triade.jpg",
         "etiquetas": [""]
     },
     {
@@ -56,7 +56,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "sanitarios",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/mochibari.jpg",
         "etiquetas": [""]
     },
     {
@@ -66,7 +66,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "accesorios",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/portarollo.jpg",
         "etiquetas": [""]
     },
     {
@@ -76,7 +76,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "sanitarios",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/tapabari.jpg",
         "etiquetas": [""]
     },
     {
@@ -86,7 +86,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "accesorios",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/toallero.jpg",
         "etiquetas": [""]
     },
     {
@@ -96,7 +96,7 @@
         "precio": 109.95,
         "descripcion": "descripcion del producto",
         "categoria": "accesorios",
-        "imagen": "../assets/img/vanitory1.jpg",
+        "imagen": "../assets/img/percha.jpg",
         "etiquetas": [""]
     }
 ]
