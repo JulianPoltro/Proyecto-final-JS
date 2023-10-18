@@ -68,9 +68,11 @@
 }
 
 .carritoVacio{
-    display: none;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
+}
+.carritoNoVacio{
+    display: none;
 }
 .productAdd{
     background-color: snow;
