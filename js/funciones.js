@@ -13,6 +13,21 @@ const crearCards = (array, contenedor, cant = array.length) => {
     actualizarBtnCarrito();
 }
 
+export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
+    contenedor.innerHTML = "";
+
+    array.slice(0, cant).map(item => {
+        contenedor.innerHTML += `
+        <article class="productAdd">
+        <img class="imgCardAdd" src=${item.imagen} alt="${item.etiquetas}">
+            <span>Cantidad ${item.cantidad}</span>
+            <span>$${item.precio}</span>
+            <a href="#" class="cardBtn" id="${item.id}">Comprar ahora </a>
+        </article>
+        `
+    })
+}
+
 
 const productCart = [];
 const actualizarBtnCarrito = () => {
@@ -20,27 +35,24 @@ const actualizarBtnCarrito = () => {
     btnCarrito.forEach(boton => {
         boton.addEventListener("click", async (e) => {
             e.preventDefault();
-            const idProduct = e.target.id
-
             fetch('../data.json')
                 .then((response) => response.json())
                 .then((data) => {
                     const idProducto = e.target.id
                     const productoEncontrado = data.find(producto => producto.id == idProducto)
-
                     const existeProducto = productCart.some(item => item.id == idProducto);
                     if (existeProducto) {
                         const indexCarrito = productCart.findIndex(item => item.id == idProducto)
                         productCart[indexCarrito].cantidad += 1;
                     } else {
                         productoEncontrado.cantidad = 1;
+                        cargar("carrito");
                         productCart.push(productoEncontrado)
                     }
 
+                    cargar("carrito");
                     actualizarNumCantidad();
-                    const convertir = JSON.stringify(productCart)
-                    window.localStorage.setItem("carrito", convertir)
-
+                    guardar(productCart,"carrito")
                 })
         })
     })
@@ -52,13 +64,18 @@ const actualizarNumCantidad = () => {
     numCart.innerText = numCarrito;
 }
 
-// const mostarCarrito = (url) => {
-//     let carrito = window.localStorage.getItem("carrito", JSON.stringify(productCart))
-//     if (!carrito) {
-//         window.localStorage.setItem("carrito")
-//         carrito = JSON.parse(localStorage.getItem("carrito"))
-//     }
-// }
+const cargar = function (clave) {
+    const datos = window.localStorage.getItem(clave);
+    if(datos){
+        return JSON.parse(datos);
+    };
+    return [];
+};
+
+const guardar = function (datos,clave) { 
+    const convertir = JSON.stringify(datos,null,2);
+    return window.localStorage.setItem(clave,convertir);
+};
 
 
 
