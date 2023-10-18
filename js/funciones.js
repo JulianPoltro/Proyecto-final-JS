@@ -39,7 +39,8 @@ const actualizarBtnCarrito = () => {
                         productCart.push(productoEncontrado)
                     }
                     actualizarNumCantidad();
-                    localStorage.setItem("addedCart",JSON.stringify(productCart))
+                    const convertir =JSON.stringify(productCart,null,2)
+                    window.localStorage.setItem("addedCart",convertir)
                 })
         })
     })
