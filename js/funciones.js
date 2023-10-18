@@ -10,20 +10,34 @@ const crearCards = (array, contenedor, cant = array.length) => {
         </article>
         `
     })
+
+
 }
 
 const actualizarBtnCarrito = () => {
     const btnCarrito = document.querySelectorAll(".cardBtn");
-    btnCarrito.forEach(boton =>{
-        boton.addEventListener("click", agregarCarrito)
+    btnCarrito.forEach(boton => {
+        boton.addEventListener("click", async (e) =>  {
+            e.preventDefault();
+            const idProduct = e.target.id
+            fetch('../data.json')
+                .then((response) => response.json())
+                .then((data) => {
+                    const idCard= e.target.id
+                    const idProducto = idCard.split("-")
+                    const productoEncontrado = data.find( producto => producto.id == idProducto[1])
+                    
+                    console.log(productoEncontrado);
+                    
+
+            })
+        })
     })
 }
 
+
 const productCart = [];
-const agregarCarrito = (e) => {
-    const idProduct = e.target.id;
-    console.log(idProduct)
-}
+
 
 export const obtenerProductos = async (url, contenedor, cant) => {
     const response = await fetch(url, { method: 'GET' })

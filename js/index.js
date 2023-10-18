@@ -18,6 +18,8 @@ obtenerProductos("../data.json", section_productsCat);
 
 
 
+
+
 // const section_carrito = selector('#carritoContenedor')
 // const addCart = ()=> {
 
