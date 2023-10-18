@@ -1,7 +1,3 @@
-import {obtenerProductos} from "./funciones.js"
+const carritoAgregado = JSON.parse(localStorage.getItem("addedCart"));
 
-
-const $ = document
-const id = (id) => $.getElementById(id)
-const selectorAll = (selector) => $.querySelectorAll(selector)
-
+console.log(carritoAgregado)
