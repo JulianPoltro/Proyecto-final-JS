@@ -67,10 +67,11 @@
     color: darkgrey;
 }
 
-/* .carritoCompra{
-    height: 50vh;
-    background-color: red;
-} */
+.carritoVacio{
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+}
 
 .selectCantidad{
     display: flex;

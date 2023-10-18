@@ -21,16 +21,14 @@ const actualizarBtnCarrito = () => {
         boton.addEventListener("click", async (e) => {
             e.preventDefault();
             const idProduct = e.target.id
+
             fetch('../data.json')
                 .then((response) => response.json())
                 .then((data) => {
                     const idProducto = e.target.id
                     const productoEncontrado = data.find(producto => producto.id == idProducto)
 
-
-
                     const existeProducto = productCart.some(item => item.id == idProducto);
-
                     if (existeProducto) {
                         const indexCarrito = productCart.findIndex(item => item.id == idProducto)
                         productCart[indexCarrito].cantidad += 1;
@@ -38,13 +36,14 @@ const actualizarBtnCarrito = () => {
                         productoEncontrado.cantidad = 1;
                         productCart.push(productoEncontrado)
                     }
+
                     actualizarNumCantidad();
-                    const convertir =JSON.stringify(productCart,null,2)
-                    window.localStorage.setItem("addedCart",convertir)
+                    const convertir = JSON.stringify(productCart)
+                    window.localStorage.setItem("carrito", convertir)
+
                 })
         })
     })
-
 }
 
 const actualizarNumCantidad = () => {
@@ -52,6 +51,16 @@ const actualizarNumCantidad = () => {
     let numCarrito = productCart.reduce((a, b) => a + b.cantidad, 0)
     numCart.innerText = numCarrito;
 }
+
+// const mostarCarrito = (url) => {
+//     let carrito = window.localStorage.getItem("carrito", JSON.stringify(productCart))
+//     if (!carrito) {
+//         window.localStorage.setItem("carrito")
+//         carrito = JSON.parse(localStorage.getItem("carrito"))
+//     }
+// }
+
+
 
 
 export const obtenerProductos = async (url, contenedor, cant) => {

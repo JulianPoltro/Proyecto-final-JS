@@ -7,8 +7,8 @@ const selectorAll = (selectorAll) => $.querySelectorAll(selectorAll)
 const section_cart = id('cartFull')
 
 
-const productosCarrito = JSON.parse(window.localStorage.getItem("addedCart"));
-console.log(productosCarrito)
+const productosCarrito = JSON.parse(window.localStorage.getItem("carrito"));
+// console.log(productosCarrito)
 
 
 if (productosCarrito){
