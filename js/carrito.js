@@ -1,3 +1,3 @@
-const carritoAgregado = JSON.parse(localStorage.getItem("addedCart"));
+const productosCarrito = JSON.parse(localStorage.getItem("addedCart"));
 
-console.log(carritoAgregado)
+console.log(productosCarrito)
