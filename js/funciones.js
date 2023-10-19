@@ -1,4 +1,4 @@
-const crearCards = (array, contenedor, cant = array.length) => {
+export const crearCards = (array, contenedor, cant = array.length) => {
     contenedor.innerHTML = "";
     array.slice(0, cant).map(item => {
         contenedor.innerHTML += `
@@ -37,12 +37,18 @@ export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
         contenedor.innerHTML += `
         <article class="productAdd">
         <img class="imgCardAdd" src=${item.imagen} alt="${item.etiquetas}">
+    
             <span>Cantidad ${item.cantidad}</span>
-            <span>$${item.precio}</span>
-            <a href="#" class="cardBtnEliminar" id="eliminar-${item.id}"><i class="fa-solid fa-x"></i></a>
+            <span>$${item.precio*item.cantidad}</span>
+            <a href="#" class="cardBtnEliminar fa-solid fa-x" id="eliminar-${item.id}"></a>
         </article>
         `
     })
+
+
+// agregar botones + - en cantidad
+// más css
+
 
     eliminarProducto();
 }
@@ -51,8 +57,10 @@ const eliminarProducto = () => {
     const btnEliminar = document.querySelectorAll(".cardBtnEliminar");
     btnEliminar.forEach(boton => {
         boton.addEventListener("click", (e) => {
+
             e.preventDefault();
-            const carrito = JSON.parse(localStorage.getItem("carrito"));
+
+            let carrito = JSON.parse(localStorage.getItem("carrito"));
             const idEliminar = e.target.id.split("eliminar-")[1];
             const productoEliminar = carrito.find(producto => producto.id == idEliminar);
             const indexEliminar = carrito.findIndex(item => item.id == idEliminar);
@@ -60,7 +68,9 @@ const eliminarProducto = () => {
                 if (productoEliminar.cantidad > 0) {
                     carrito[indexEliminar].cantidad -= 1;
                 } else {
-                    carrito.splice(indexEliminar, 1);
+                   // carrito.splice(indexEliminar, 1);
+                    carrito = carrito.filter((item)=> item.id !== productoEliminar.id) 
+
                 }
 
                 guardar(carrito, "carrito");
@@ -71,7 +81,7 @@ const eliminarProducto = () => {
     });
 };
 
-const productCart = [];
+
 const actualizarBtnCarrito = () => {
     const btnCarrito = document.querySelectorAll(".cardBtn");
     btnCarrito.forEach(boton => {
@@ -80,6 +90,7 @@ const actualizarBtnCarrito = () => {
             fetch('../data.json')
                 .then((response) => response.json())
                 .then((data) => {
+                    let productCart = cargar("carrito");
                     const idProducto = e.target.id
                     const productoEncontrado = data.find(producto => producto.id == idProducto);
                     const existeProducto = productCart.some(item => item.id == idProducto);
@@ -90,7 +101,6 @@ const actualizarBtnCarrito = () => {
                         productoEncontrado.cantidad = 1;
                         productCart.push(productoEncontrado)
                     };
-                    cargar("carrito");
                     guardar(productCart, "carrito")
                     actualizarNumCantidad();
                 });
@@ -98,9 +108,11 @@ const actualizarBtnCarrito = () => {
     });
 };
 
-const actualizarNumCantidad = () => {
+
+export const actualizarNumCantidad = () => {
+    let productCart = cargar("carrito");
     const numCart = document.querySelector("#numCantidad")
-    let numCarrito = productCart.reduce((a, b) => a + b.cantidad, 0)
+    let numCarrito = productCart.length;
     numCart.innerText = numCarrito;
 }
 
@@ -118,11 +130,9 @@ const guardar = function (datos, clave) {
 };
 
 
-
-
-export const obtenerProductos = async (url, contenedor, cant) => {
-    const response = await fetch(url, { method: 'GET' })
+export const obtenerProductos = async (url) => {
+    const response = await fetch(url)
     const data = await response.json()
-    crearCards(data, contenedor, cant);
+    return data
 }
 
