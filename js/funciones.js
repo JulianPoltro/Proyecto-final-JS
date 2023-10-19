@@ -7,10 +7,27 @@ const crearCards = (array, contenedor, cant = array.length) => {
             <span>${item.titulo}</span>
             <span>$${item.precio}</span>
             <a href="#" class="cardBtn" id="${item.id}">Agregar al carrito </a>
+            <a href="#" class="cardBtnDetail" id=""><i class="fa-solid fa-eye"></i></a>
         </article>
         `
     })
     actualizarBtnCarrito();
+    mostrarDetalle();
+}
+
+const mostrarDetalle = () => {
+    const detalleCards = document.querySelectorAll(".cardBtnDetail");
+    detalleCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "",
+                text: "Contenido",
+                icon: 'info'
+            });
+        });
+    });
 }
 
 export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
@@ -22,8 +39,7 @@ export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
         <img class="imgCardAdd" src=${item.imagen} alt="${item.etiquetas}">
             <span>Cantidad ${item.cantidad}</span>
             <span>$${item.precio}</span>
-            <a href="#" class="cardBtn" id="${item.id}">Comprar ahora</a>
-            <a href="#" class="cardBtnEliminar" id="eliminar-${item.id}">Eliminar producto</a>
+            <a href="#" class="cardBtnEliminar" id="eliminar-${item.id}"><i class="fa-solid fa-x"></i></a>
         </article>
         `
     })
@@ -36,28 +52,24 @@ const eliminarProducto = () => {
     btnEliminar.forEach(boton => {
         boton.addEventListener("click", (e) => {
             e.preventDefault();
-            const carrito = JSON.parse(localStorage.getItem("carrito"))
+            const carrito = JSON.parse(localStorage.getItem("carrito"));
             const idEliminar = e.target.id.split("eliminar-")[1];
+            const productoEliminar = carrito.find(producto => producto.id == idEliminar);
+            const indexEliminar = carrito.findIndex(item => item.id == idEliminar);
+            if (productoEliminar) {
+                if (productoEliminar.cantidad > 0) {
+                    carrito[indexEliminar].cantidad -= 1;
+                } else {
+                    carrito.splice(indexEliminar, 1);
+                }
 
-            const productoEliminar = carrito.find(producto => producto.id == idEliminar)
-
-            if (productoEliminar.cantidad > 0) {
-                const indexEliminar = carrito.findIndex(item => item.id == idEliminar)
-                carrito[indexEliminar].cantidad -= 1;
-            }
-
-            guardar(carrito, "carrito")
-            const actCarrito = document.getElementById("cartFull")
-            crearCardsCarrito(carrito,actCarrito)
-            console.log(carrito);
-        })
-    })
-}
-
-
-
-
-
+                guardar(carrito, "carrito");
+                const actCarrito = document.getElementById("cartFull");
+                crearCardsCarrito(carrito, actCarrito);
+            };
+        });
+    });
+};
 
 const productCart = [];
 const actualizarBtnCarrito = () => {
@@ -69,7 +81,7 @@ const actualizarBtnCarrito = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     const idProducto = e.target.id
-                    const productoEncontrado = data.find(producto => producto.id == idProducto)
+                    const productoEncontrado = data.find(producto => producto.id == idProducto);
                     const existeProducto = productCart.some(item => item.id == idProducto);
                     if (existeProducto) {
                         const indexCarrito = productCart.findIndex(item => item.id == idProducto)
@@ -77,16 +89,14 @@ const actualizarBtnCarrito = () => {
                     } else {
                         productoEncontrado.cantidad = 1;
                         productCart.push(productoEncontrado)
-                    }
-
-
+                    };
                     cargar("carrito");
                     guardar(productCart, "carrito")
                     actualizarNumCantidad();
-                })
-        })
-    })
-}
+                });
+        });
+    });
+};
 
 const actualizarNumCantidad = () => {
     const numCart = document.querySelector("#numCantidad")
