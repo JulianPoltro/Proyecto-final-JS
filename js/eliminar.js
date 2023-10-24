@@ -1,4 +1,4 @@
-import { crearCardsCarrito } from "./cardCarrito";
+import { crearCardsCarrito } from "./cardCarrito.js";
 
 export const eliminarProducto = () => {
     const btnEliminar = document.querySelectorAll(".cardBtnEliminar");

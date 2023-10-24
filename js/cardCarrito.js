@@ -1,4 +1,4 @@
-import { eliminarProducto } from "./eliminar";
+import { eliminarProducto } from "./eliminar.js";
 
 export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
     contenedor.innerHTML = "";

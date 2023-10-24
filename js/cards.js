@@ -1,5 +1,5 @@
-import { mostrarDetalle } from "./detalle";
-import { actualizarBtnCarrito } from "./actualizarCarrito";
+import { mostrarDetalle } from "./detalle.js";
+import { actualizarBtnCarrito } from "./actualizarCarrito.js";
 
 
 export const crearCards = (array, contenedor, cant = array.length) => {
