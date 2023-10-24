@@ -1,4 +1,5 @@
-import { obtenerProductos, crearCards, actualizarNumCantidad } from "./funciones.js"
+import { obtenerProductos, actualizarNumCantidad } from "./funciones.js"
+import { crearCards } from "./cards.js";
 
 const $ = document
 const id = (id) => $.getElementById(id)
