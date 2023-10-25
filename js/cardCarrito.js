@@ -1,4 +1,6 @@
 import { restarProducto } from "./restar.js";
+import { sumarProducto } from "./sumar.js";
+import { eliminarProducto } from "./eliminar.js";
 import { cargar, make } from "./funciones.js";
 
 
@@ -27,4 +29,6 @@ export const crearCardsCarrito = (array, contenedor) => {
     })
 
     restarProducto();
+    sumarProducto();
+    eliminarProducto();
 }
