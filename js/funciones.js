@@ -27,9 +27,9 @@ export const obtenerProductos = async (url) => {
 }
 
 
-// const make = (tag, props, attrs) => {
-//     const element = document.createElement(tag)
-//     Object.keys(props).forEach(prop => element[prop] = props[prop])
-//     Object.keys(attrs).forEach(attr => element.setAttribute(attr, attrs[attr]))
-//     return element
-// }
+export const make = (tag, props, attrs) => {
+    const element = document.createElement(tag)
+    Object.keys(props).forEach(prop => element[prop] = props[prop])
+    Object.keys(attrs).forEach(attr => element.setAttribute(attr, attrs[attr]))
+    return element
+}

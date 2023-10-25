@@ -71,10 +71,9 @@
 .carritoVacio{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.carritoNoVacio{
-    display: none;
-}
+
 .productAdd{
     background-color: snow;
     border-radius: 15px;

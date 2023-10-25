@@ -1,28 +1,30 @@
 import { crearCardsCarrito } from "./cardCarrito.js"
-import { obtenerProductos, actualizarNumCantidad } from "./funciones.js"
+import { obtenerProductos, cargar, make } from "./funciones.js"
 
 const $ = document
 const id = (id) => $.getElementById(id)
-
-
-const section_cart = id('cartFull')
-const section_cartEmpty = id('cartEmpty')
-
-const productosCarrito = JSON.parse(window.localStorage.getItem("carrito"));
+const mainSection = id("carritoMain")
 
 
 
 export const carritoActualizado = () => {
-    if (productosCarrito.length > 0) {
+    const cantidadProductos = cargar("carrito")
 
-        obtenerProductos("../data.json").then(data => {
-            crearCardsCarrito(data, section_cart)
-        })
-
-        section_cartEmpty.classList.remove('carritoVacio');
-        section_cartEmpty.classList.add('carritoNoVacio');
-
+    if (cantidadProductos.length == 0) {
+        const sectionCarritoVacio = make('section', { innerText: 'El carrito esta vacio' }, { class: 'carritoVacio' });
+        mainSection.appendChild(sectionCarritoVacio);
     }
+
+
+    const sectionCarritoLleno = make('section', {}, { class: 'carritoLleno', id: 'cartFull' });
+    mainSection.appendChild(sectionCarritoLleno);
+    const sectionLleno = id("cartFull")
+    obtenerProductos("../data.json").then(data => {
+        crearCardsCarrito(data, sectionLleno)
+    })
 }
+
+
+
 
 carritoActualizado();
