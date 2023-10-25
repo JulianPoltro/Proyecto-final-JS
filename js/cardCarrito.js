@@ -1,9 +1,17 @@
 import { eliminarProducto } from "./eliminar.js";
+import { cargar } from "./funciones.js";
 
-export const crearCardsCarrito = (array, contenedor, cant = array.length) => {
+
+export const crearCardsCarrito = (array, contenedor) => {
+
+    const productos = cargar("carrito").map(producto => {
+        const resultado = array.find(datos => datos.id == producto.id);
+        
+        return { ...resultado, cantidad: producto.cantidad };
+    })
+
     contenedor.innerHTML = "";
-
-    array.slice(0, cant).map(item => {
+    productos.map(item => {
         contenedor.innerHTML += `
         <article class="productAdd">
         <img class="imgCardAdd" src=${item.imagen} alt="${item.etiquetas}">

@@ -20,3 +20,5 @@ obtenerProductos("../data.json").then(data => {
     crearCards(data, section_products, 4)
     actualizarNumCantidad();
 })
+
+

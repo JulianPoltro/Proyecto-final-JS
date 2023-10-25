@@ -33,3 +33,7 @@ const make = (tag, props, attrs) => {
     Object.keys(attrs).forEach(attr => element.setAttribute(attr, attrs[attr]))
     return element
 }
+
+
+const myDiv = make('div', { innerText: 'Hello', style: 'color: red;' }, { class: 'my-class', id: 'my-id' });
+document.body.appendChild(myDiv);
