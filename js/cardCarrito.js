@@ -1,5 +1,5 @@
-import { eliminarProducto } from "./eliminar.js";
-import { cargar } from "./funciones.js";
+import { restarProducto } from "./restar.js";
+import { cargar, make } from "./funciones.js";
 
 
 export const crearCardsCarrito = (array, contenedor) => {
@@ -12,17 +12,19 @@ export const crearCardsCarrito = (array, contenedor) => {
 
     contenedor.innerHTML = "";
     productos.map(item => {
-        contenedor.innerHTML += `
-        <article class="productAdd">
-        <img class="imgCardAdd" src=${item.imagen} alt="${item.etiquetas}">
-    
-            <span>Cantidad ${item.cantidad}</span>
-            <span>$${item.precio * item.cantidad}</span>
-            <a href="#" class="cardBtnEliminar fa-solid fa-x" id="eliminar-${item.id}"></a>
-        </article>
-        `
+        const productAdd = make("article",{},{class:"productAdd"});
+        const imgCardAdd = make("img",{},{class:"imgCardAdd", src:item.imagen, alt:item.etiquetas});
+        const cantidadCardAdd = make("span",{innerText: item.cantidad},{});
+        const precioCardAdd = make("span",{innerText: `$ ${item.cantidad * item.precio}` },{});
+
+        const cardBtnReducir = make("a",{},{class: "cardBtnMinus fa-solid fa-minus", id: `restar-${item.id}`});
+        const cardBtnAumentar = make("a",{},{class: "cardBtnPlus fa-solid fa-plus", id: `sumar-${item.id}`});
+        const cardBtnEliminar = make("a",{},{class: "cardBtnEliminar fa-solid fa-trash", id: `eliminar-${item.id}`});
+        
+        contenedor.appendChild(productAdd);
+        productAdd.append(imgCardAdd, cardBtnReducir, cantidadCardAdd, cantidadCardAdd, cardBtnAumentar, precioCardAdd, cardBtnEliminar);
+
     })
-    // agregar botones + - en cantidad
-    // más css
-    eliminarProducto();
+
+    restarProducto();
 }

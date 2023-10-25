@@ -71,7 +71,6 @@
 .carritoVacio{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .productAdd{
@@ -83,7 +82,14 @@
     justify-content: space-around;
     align-items: center;
 }
-
+.cardBtnMinus, .cardBtnPlus{
+    cursor: pointer;
+    font-size: 18px;
+}
+.cardBtnEliminar{
+    cursor: pointer;
+    font-size: 24px;
+}
 .selectCantidad{
     display: flex;
     justify-content: center;
