@@ -11,7 +11,7 @@ export const crearCards = (array, contenedor, cant = array.length) => {
             <span>${item.titulo}</span>
             <span>$${item.precio}</span>
             <a href="#" class="cardBtn" id="${item.id}">Agregar al carrito </a>
-            <a href="#" class="cardBtnDetail" id=""><i class="fa-solid fa-eye"></i></a>
+            <a href="#" class="cardBtnDetail fa-solid fa-eye" id="detalle-${item.id}"></a>
         </article>
         `
     })
