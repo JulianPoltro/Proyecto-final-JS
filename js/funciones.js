@@ -27,13 +27,9 @@ export const obtenerProductos = async (url) => {
 }
 
 
-const make = (tag, props, attrs) => {
-    const element = document.createElement(tag)
-    Object.keys(props).forEach(prop => element[prop] = props[prop])
-    Object.keys(attrs).forEach(attr => element.setAttribute(attr, attrs[attr]))
-    return element
-}
-
-
-const myDiv = make('div', { innerText: 'Hello', style: 'color: red;' }, { class: 'my-class', id: 'my-id' });
-document.body.appendChild(myDiv);
+// const make = (tag, props, attrs) => {
+//     const element = document.createElement(tag)
+//     Object.keys(props).forEach(prop => element[prop] = props[prop])
+//     Object.keys(attrs).forEach(attr => element.setAttribute(attr, attrs[attr]))
+//     return element
+// }
