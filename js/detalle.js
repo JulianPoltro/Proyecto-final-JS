@@ -1,4 +1,4 @@
-import { actualizarBtnCarrito } from "./actualizarCarrito.js";
+import { cargar, guardar, actualizarNumCantidad } from "./funciones.js";
 
 
 
@@ -29,18 +29,37 @@ export const mostrarDetalle = () => {
                         cancelButtonColor: '#d33',
                         confirmButtonText: 'Agregar al carrito!',
                         cancelButtonText: 'Seguir comprando',
-                        preConfirm: () => actualizarBtnCarrito()
-                    // }).then((result) => {
-                    //     if (result.isConfirmed) {
-                    //         Swal.fire(
-                    //             'Gracias!',
-                    //             'El producto ha sido agregado con exito.',
-                    //             'success',
-                    //         )
+                        preConfirm: () => {
+                            agregarProductoDetalle(idDetalle)
+                        }
 
-                    //     }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire(
+                                'Gracias!',
+                                'El producto ha sido agregado con exito.',
+                                'success',
+                            )
+
+                        }
                     })
                 });
         });
     });
 }
+
+
+const agregarProductoDetalle = (id) => {
+
+    let productCart= cargar("carrito");
+    const existeProducto = productCart.some(item => item.id == id);
+
+    if (existeProducto) {
+        const indexCarrito = productCart.findIndex(item => item.id == id)
+        productCart[indexCarrito].cantidad += 1;
+    } else {
+        productCart.push({id:id,cantidad:1})
+    };
+    guardar(productCart, "carrito")
+    actualizarNumCantidad();
+};

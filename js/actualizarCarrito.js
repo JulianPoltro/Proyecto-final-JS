@@ -1,6 +1,7 @@
 import { guardar, actualizarNumCantidad, cargar} from "./funciones.js";
 
 export const actualizarBtnCarrito = () => {
+
     const btnCarrito = document.querySelectorAll(".cardBtn");
     btnCarrito.forEach(boton => {
         boton.addEventListener("click", (e) => {
