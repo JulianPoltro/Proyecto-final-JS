@@ -11,8 +11,19 @@ export const crearCardsCarrito = (array, contenedor) => {
         
         return { ...resultado, cantidad: producto.cantidad };
     })
+let total = productos.map(producto => { const subtotal =+ (producto.cantidad*producto.precio)
+    return subtotal
+});
+let sumaTotal = total.reduce((a,b)=> a+b,0);
+const verTotal = make("span",{innerText: `El total de su compra es: $${sumaTotal}`},{class:"sumaTotal"})
+const carritoVacio = make("span",{innerText: "El carrito esta vacio"},{class:"carritoVacio"})
 
     contenedor.innerHTML = "";
+    if (sumaTotal==0){
+        contenedor.appendChild(carritoVacio)
+    }else{
+        contenedor.appendChild(verTotal)
+    }
     productos.map(item => {
         const productAdd = make("article",{},{class:"productAdd"});
         const imgCardAdd = make("img",{},{class:"imgCardAdd", src:item.imagen, alt:item.etiquetas});

@@ -3,7 +3,7 @@ import { actualizarBtnCarrito } from "./actualizarCarrito.js";
 import { make } from "./funciones.js";
 
 export const crearCards = (array, contenedor, cant = array.length) => {
-
+    contenedor.innerHTML = "";
     array.slice(0, cant).map(item => {
 
         const productCard = make('article', {}, {class: 'productCard'});
