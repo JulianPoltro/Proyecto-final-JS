@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+:root{
+    --font-principal: 'Raleway, sans-serif';
+    --font-titulos: 'Prompt, sans-serif';
+    --color-shadow:rgba(94, 247, 114, 0.5);;
+    --color-fondo:rgb(220, 220, 220);;
+    --color-fuente:rgb(0,0,0);
+
+}

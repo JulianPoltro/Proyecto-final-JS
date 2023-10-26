@@ -15,14 +15,16 @@ let total = productos.map(producto => { const subtotal =+ (producto.cantidad*pro
     return subtotal
 });
 let sumaTotal = total.reduce((a,b)=> a+b,0);
-const verTotal = make("span",{innerText: `El total de su compra es: $${sumaTotal}`},{class:"sumaTotal"})
+const contenedorTotal = make("section",{},{class:"contenedorCarrito"});
+const verTotal = make("span",{innerText: `Total a pagar: $${sumaTotal}`},{class:"sumaTotal"})
 const carritoVacio = make("span",{innerText: "El carrito esta vacio"},{class:"carritoVacio"})
 
-    contenedor.innerHTML = "";
+contenedor.innerHTML = "";
+contenedor.appendChild(contenedorTotal);
     if (sumaTotal==0){
-        contenedor.appendChild(carritoVacio)
+        contenedorTotal.appendChild(carritoVacio)
     }else{
-        contenedor.appendChild(verTotal)
+        contenedorTotal.appendChild(verTotal)
     }
     productos.map(item => {
         const productAdd = make("article",{},{class:"productAdd"});
