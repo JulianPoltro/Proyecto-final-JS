@@ -8,6 +8,7 @@
     align-items: flex-start;
     margin-left: 0 5vw;
     padding: 0 2rem;
+    background-color: var(--color-fondoCard);
 }
 
 .barra_nav a {
@@ -15,7 +16,7 @@
     padding: 0.25rem;
     text-align: center;
     font-size: 18px;
-    color: black
+    color: var(--color-fuente)
 }
 
 .productList {
@@ -34,7 +35,7 @@
     border-radius: 5px;
     align-items: center;
     justify-content: space-between;
-    background-color: snow;
+    background-color: var(--color-fondoCard);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -60,8 +61,8 @@
     margin: 0.5rem;
     padding: 0.25rem;
     border-radius: 5px;
-    background-color: rgb(118, 218, 213);
-    color: darkslategrey;
+    background-color: var(--color-btn);
+    color: var(--color-txtBtn);
     font-size: 12px;
     font-weight: bold;
     box-shadow: 3px 3px 3px 0px rgba(200, 185, 185, 0.5);
@@ -69,8 +70,8 @@
 }
 
 .cardBtn:hover{
-    background-color: darkslategrey;
-    color: darkgrey;
+    background-color: var(--color-txtBtn);
+    color: var(--color-btn);
 }
 .contenedorCarrito{
     display: flex;

@@ -5,7 +5,9 @@
     --font-principal: 'Raleway, sans-serif';
     --font-titulos: 'Prompt, sans-serif';
     --color-shadow:rgba(94, 247, 114, 0.5);;
-    --color-fondo:rgb(220, 220, 220);;
+    --color-fondo:rgb(208, 247, 185);;
     --color-fuente:rgb(0,0,0);
-
+    --color-btn: rgb(118, 218, 213);
+    --color-txtBtn:darkslategrey;;
+    --color-fondoCard:snow;
 }
